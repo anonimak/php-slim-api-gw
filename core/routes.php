@@ -6,14 +6,15 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Server\RequestHandlerInterface as RequestHandler;
 use Slim\Psr7\Response;
 use DI\Container;
-use App\controller\ControllerNews;
+// use App\Controllers\CobaCtrl;
 
 return function (App $app) {
 
     $container = $app->getContainer();
 
     $app->group('/api', function (Group $group) use ($container){
-        $group->get('/test','App\controller\ControllerNews');
+        $group->get('/test',\App\Controllers\CobaCtrls::class. ":home");
+        $group->get('/',\App\Controllers\CobaCtrls::class);
 
         $group->group('/v1', function (Group $group) use ($container){
 
