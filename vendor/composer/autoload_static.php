@@ -4,14 +4,14 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticIniteed4988fdfd34dab8cd0660c7ca2c1da
+class ComposerStaticInit6b567ea7512614fdd446583fce402240
 {
     public static $files = array (
-        '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         'bd9634f2d41831496de0d3dfe4c94881' => __DIR__ . '/..' . '/symfony/polyfill-php56/bootstrap.php',
-        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
+        '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         '253c157292f75eb38082b5acb06f3f01' => __DIR__ . '/..' . '/nikic/fast-route/src/functions.php',
+        '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'b33e3d135e5d9e47d845c576147bda89' => __DIR__ . '/..' . '/php-di/php-di/src/functions.php',
     );
 
@@ -78,8 +78,8 @@ class ComposerStaticIniteed4988fdfd34dab8cd0660c7ca2c1da
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
         ),
         'Webmozart\\Assert\\' => 
         array (
@@ -128,8 +128,8 @@ class ComposerStaticIniteed4988fdfd34dab8cd0660c7ca2c1da
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-factory/src',
-            1 => __DIR__ . '/..' . '/psr/http-message/src',
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
+            1 => __DIR__ . '/..' . '/psr/http-factory/src',
         ),
         'Psr\\Container\\' => 
         array (
@@ -737,9 +737,9 @@ class ComposerStaticIniteed4988fdfd34dab8cd0660c7ca2c1da
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticIniteed4988fdfd34dab8cd0660c7ca2c1da::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticIniteed4988fdfd34dab8cd0660c7ca2c1da::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticIniteed4988fdfd34dab8cd0660c7ca2c1da::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit6b567ea7512614fdd446583fce402240::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit6b567ea7512614fdd446583fce402240::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit6b567ea7512614fdd446583fce402240::$classMap;
 
         }, null, ClassLoader::class);
     }

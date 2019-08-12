@@ -2,9 +2,6 @@
 
 use Slim\App;
 use Slim\Interfaces\RouteCollectorProxyInterface as Group;
-use Psr\Http\Message\ServerRequestInterface as Request;
-use Psr\Http\Server\RequestHandlerInterface as RequestHandler;
-use Slim\Psr7\Response;
 use DI\Container;
 // use App\Controllers\CobaCtrl;
 
@@ -12,28 +9,8 @@ return function (App $app) {
 
     $container = $app->getContainer();
 
-    $app->group('/api', function (Group $group) use ($container){
-        $group->get('/test',\App\Controllers\CobaCtrls::class. ":home");
-        $group->get('/',\App\Controllers\CobaCtrls::class);
-
-        $group->group('/v1', function (Group $group) use ($container){
-
-            $group->get('/test', function ($request, $response, $args) {
-                $response->getBody()->write("oke sip");
-                return $response
-                    ->withHeader('Content-Type', 'application/json')
-                    ->withStatus(200);
-            })->add(function (Request $request, RequestHandler $handler) {
-                $response = $handler->handle($request);
-                $existingContent = (string) $response->getBody();
-            
-                $response = new Response();
-                $response->getBody()->write('BEFORE ' . $existingContent);
-            
-                return $response;
-            });
-            
-        });
+    $app->group('/v1', function (Group $group) use ($container){
+        $group->group('/news',\App\Routes\NewsRoute::class);
     });
 
     $app->group('/users', function (Group $group) use ($container) {

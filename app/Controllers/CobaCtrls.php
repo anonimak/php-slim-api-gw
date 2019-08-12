@@ -1,7 +1,9 @@
 <?php 
 namespace App\Controllers;
 
-class CobaCtrls
+use App\Interfaces\ControllerInterfaces;
+
+class CobaCtrls implements ControllerInterfaces
 {
     public function __invoke($request,$response, $arg)
     {
@@ -9,9 +11,26 @@ class CobaCtrls
         return $response;
     }
 
-    public function home($request,$response, $arg)
+    public function getData($request,$response, $arg)
     {
-        $response->getBody()->write("oke home");
+        $pdo = $this->get("pdo");
+            // SELECT * FROM users WHERE id = ?
+            $selectStatement = $pdo->select()
+                            ->from('sysware_news');
+
+            $stmt = $selectStatement->execute();
+            $data = $stmt->fetchAll();
+
+            $logger->info("Oke.");
+            $payload = json_encode($data);
+            $response->getBody()->write($payload);
+            return $response
+                ->withHeader('Content-Type', 'application/json')
+                ->withStatus(200);
+    }
+    
+    public function home($request,$response, $arg){
+        $response->getBody()->write($arg['home']);
         return $response;
     }
 }
