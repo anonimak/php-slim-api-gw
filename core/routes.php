@@ -13,7 +13,7 @@ return function (App $app) {
         $group->group('/news',\App\Routes\NewsRoute::class);
     });
 
-    $app->group('/users', function (Group $group) use ($container) {
+    $app->group('/users', function (Group $group) {
         // $group->get('', ListUsersAction::class);
         // $group->get('/{id}', ViewUserAction::class);
 
