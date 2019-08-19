@@ -16,6 +16,7 @@
         "faapz/pdo": "^1.1",
         "monolog/monolog": "^1.24",
         "php-di/php-di": "^6.0",
+        "siriusphp/validation": "^2.3",
         "slim/psr7": "^0.4.0",
         "slim/slim": "^4.0"
     },

@@ -41,8 +41,8 @@ return function (App $app) {
             $parsedBody = $request->getBody()->getContents();
             parse_str($parsedBody,$new);
 
-            $payload = json_encode($headerValueArray);
-            $response->getBody()->write($payload);
+            print_r($new);
+            $response->getBody()->write("");
             return $response
                 ->withHeader('Content-Type', 'application/json')
                 ->withStatus(200);

@@ -37,6 +37,7 @@ class ComposerStaticInitc86998e9d954ceeeac40ad677e4fef2c
             'Slim\\Tests\\' => 11,
             'Slim\\Psr7\\' => 10,
             'Slim\\' => 5,
+            'Sirius\\Validation\\' => 18,
         ),
         'P' => 
         array (
@@ -116,6 +117,10 @@ class ComposerStaticInitc86998e9d954ceeeac40ad677e4fef2c
         'Slim\\' => 
         array (
             0 => __DIR__ . '/..' . '/slim/slim/Slim',
+        ),
+        'Sirius\\Validation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/siriusphp/validation/src',
         ),
         'Psr\\Log\\' => 
         array (

@@ -10,7 +10,7 @@ class NewsRoute{
     public function __invoke(Group $group){
 
         $group->get('/coba',\App\Controllers\CobaCtrls::class. ":getData");
-        $group->get('/',\App\Controllers\CobaCtrls::class);
+        $group->post('/post',\App\Controllers\CobaCtrls::class. ":setData");
         $group->get('/home/{home}',\App\Controllers\CobaCtrls::class. ":home");
 
         $group->get('/test', function ($request, $response, $args) {

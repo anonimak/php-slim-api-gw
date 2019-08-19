@@ -18,7 +18,7 @@ return function (App $app) {
             'level' => Logger::DEBUG,
         ],
         'db' => [
-            'dbname' => 'warufa',
+            'dbname' => 'syswareid',
             'dbhost' => 'localhost',
             'username' => 'root',
             'password' => 'qwertyui',
